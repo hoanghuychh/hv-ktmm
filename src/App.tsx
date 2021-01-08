@@ -16,7 +16,7 @@ const Tab = createBottomTabNavigator();
 
 const App = () => {
   const init = async () => {
-    await sleep(1000);
+    await sleep(100);
     // …do multiple async tasks
   };
 
