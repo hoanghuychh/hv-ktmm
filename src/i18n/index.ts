@@ -6,27 +6,38 @@ const resources = {
   en: {
     translation: {
       english: 'English',
-      french: 'Français',
-      welcome: 'Welcome to Typescript React Native Starter!',
-      instructions: 'To get started, edit Home.tsx',
-      iosInstruction: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-      androidInstruction:
-        'Double tap R on your keyboard to reload,\n' + 'Shake or press menu button for dev menu',
+      welcome: 'Will you enroll Academy Of Cryptography Techniques!',
+      inevitable: 'Of course !',
+      mayBe: 'May Be',
+      noChoose: 'No, I have a plan',
       settings: 'Settings',
       home: 'Home',
-      fetchUser: 'Fetch user',
+      language: 'Language',
+      cntt: 'Information technology',
+      attt: 'Information security',
+      dtvt: 'Electronics and telecommunications engineering',
+      industry: 'The industry you are interested in ?',
+      continue: 'Continue',
+      thanks: 'Thank you',
+      takeGift: 'The Academy gives you a souvenir',
     },
   },
-  fr: {
+  vn: {
     translation: {
-      welcome: 'Bienvenue à Typescript React Native Starter !',
-      instructions: 'Pour commencer, éditez Home.tsx',
-      iosInstruction: 'Appuyez sur Cmd+R pour recharger,\n' + 'Cmd+D ou secouez pour le menu dev',
-      androidInstruction:
-        'Appuyez deux fois sur la touche R de votre clavier pour recharger,\n' +
-        'Secouer ou appuyer sur le bouton de menu pour le menu de développement',
-      settings: 'Paramètres',
-      home: 'Accueil',
+      welcome: 'Bạn sẽ đăng ký học tại Học viện Kỹ Thuật Mật Mã ?',
+      inevitable: 'Tất nhiên !',
+      mayBe: 'Đang phân vân',
+      noChoose: 'Không, tôi đã có kế hoạch',
+      settings: 'Cài đặt',
+      home: 'Trang chủ',
+      language: 'Ngôn ngữ',
+      cntt: 'Công nghệ thông tin',
+      attt: 'An toàn thông tin',
+      dtvt: 'Kĩ thuật điện tử viễn thông',
+      industry: 'Ngành bạn quan tâm ?',
+      continue: 'Tiếp tục',
+      thanks: 'Cảm ơn bạn',
+      takeGift: 'Học viện tặng bạn món quà kỉ niệm',
     },
   },
 };
@@ -35,8 +46,8 @@ i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     resources,
-    lng: 'en',
-    fallbackLng: 'en',
+    lng: 'vn',
+    fallbackLng: 'vn',
 
     keySeparator: false, // we do not use keys in form messages.welcome
 

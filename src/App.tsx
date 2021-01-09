@@ -7,7 +7,7 @@ import Icon from 'react-native-easy-icon';
 import * as eva from '@eva-design/eva';
 import {ApplicationProvider, Layout, Text} from '@ui-kitten/components';
 
-import Home from 'src/containers/Home';
+import StackNavigator from 'src/containers/StackNavigator';
 import Settings from 'src/containers/Settings';
 import {sleep} from './utils/async';
 
@@ -36,7 +36,7 @@ const App = () => {
       <Tab.Navigator initialRouteName="home">
         <Tab.Screen
           name="home"
-          component={Home}
+          component={StackNavigator}
           options={{
             tabBarLabel: t('home'),
             tabBarIcon: ({focused, color, size}) => (

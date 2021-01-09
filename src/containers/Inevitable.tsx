@@ -5,26 +5,26 @@ import {Button} from '@ui-kitten/components';
 import Colors from 'src/constants/colors';
 import {push} from 'src/lib/NavigationService';
 
-function Home() {
+function Inevitable() {
   const {t} = useTranslation();
 
   return (
     <View style={styles.container}>
-      <Text style={styles.welcome}>{t('welcome')}</Text>
-      <Button style={styles.button} status="success" onPress={() => push('Inevitable', {})}>
-        {t('inevitable')}
+      <Text style={styles.welcome}>{t('industry')}</Text>
+      <Button style={styles.button} status="primary" onPress={() => push('CNTT', {})}>
+        {t('cntt')}
       </Button>
-      <Button style={styles.button} status="warning" onPress={() => push('IntroACT', {})}>
-        {t('mayBe')}
+      <Button style={styles.button} status="primary" onPress={() => push('ATTT', {})}>
+        {t('attt')}
       </Button>
-      <Button style={styles.button} status="info" onPress={() => push('thanks', {})}>
-        {t('noChoose')}
+      <Button style={styles.button} status="primary" onPress={() => push('DTVT', {})}>
+        {t('dtvt')}
       </Button>
     </View>
   );
 }
 
-export default memo(Home);
+export default memo(Inevitable);
 
 const styles = StyleSheet.create({
   button: {

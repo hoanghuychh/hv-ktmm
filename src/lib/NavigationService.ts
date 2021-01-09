@@ -1,9 +1,9 @@
-import {NavigationAction, NavigationContainerRef} from '@react-navigation/native';
+import {NavigationAction, NavigationContainerRef, StackActions} from '@react-navigation/native';
 import * as React from 'react';
 
 export const navigationRef: React.RefObject<NavigationContainerRef> = React.createRef();
 
-export default class NavigationService {
+export class NavigationService {
   public static isReady: boolean;
 
   public static navigate(name: string, params?: Record<string, unknown>) {
@@ -20,4 +20,7 @@ export default class NavigationService {
   }
 
   // add other navigation functions that you need and export them
+}
+export function push(name: string, params?: Record<string, unknown>) {
+  navigationRef.current && navigationRef.current.dispatch(StackActions.push(name, params));
 }

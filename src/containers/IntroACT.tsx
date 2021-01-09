@@ -4,33 +4,36 @@ import {StyleSheet, Text, View} from 'react-native';
 import {Button} from '@ui-kitten/components';
 import Colors from 'src/constants/colors';
 
-function Settings() {
-  const {t, i18n} = useTranslation();
+function Inevitable() {
+  const {t} = useTranslation();
+
   return (
     <View style={styles.container}>
-      <Text>{t('language')}</Text>
-      <Button style={styles.button} onPress={() => i18n.changeLanguage('en')}>
-        {t('English')}
-      </Button>
-      <Button style={styles.button} onPress={() => i18n.changeLanguage('vn')}>
-        {t('Việt Nam')}
+      <Text style={styles.welcome}>{t('descriptionACT')}</Text>
+      <Button style={styles.button} status="primary">
+        {t('continue')}
       </Button>
     </View>
   );
 }
 
-export default memo(Settings);
+export default memo(Inevitable);
 
 const styles = StyleSheet.create({
+  button: {
+    margin: 2,
+    minWidth: 222,
+    marginTop: 10,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Colors.aliceBlue,
   },
-  button: {
-    margin: 2,
-    marginTop: 10,
-    minWidth: 150,
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
   },
 });
