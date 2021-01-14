@@ -11,7 +11,7 @@ function Home() {
   return (
     <View style={styles.container}>
       <Text style={styles.welcome}>{t('welcome')}</Text>
-      <Button style={styles.button} status="success" onPress={() => push('Inevitable', {})}>
+      <Button style={styles.button} status="primary" onPress={() => push('Inevitable', {})}>
         {t('inevitable')}
       </Button>
       <Button style={styles.button} status="warning" onPress={() => push('IntroACT', {})}>

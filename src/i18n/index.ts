@@ -6,9 +6,9 @@ const resources = {
   en: {
     translation: {
       english: 'English',
-      welcome: 'Will you enroll Academy Of Cryptography Techniques!',
+      welcome: 'Will you enroll Academy Of Cryptography Techniques ?',
       inevitable: 'Of course !',
-      mayBe: 'May Be',
+      mayBe: 'Considering',
       noChoose: 'No, I have a plan',
       settings: 'Settings',
       home: 'Home',
@@ -19,7 +19,7 @@ const resources = {
       industry: 'The industry you are interested in ?',
       continue: 'Continue',
       thanks: 'Thank you !',
-      takeGift: 'The Academy gives you a souvenir',
+      takeGift: 'The Academy gives you a gift',
       descriptionCntt:
         'Designing, developing and programming embedded software on mobile devices (smartphone, tablet, iphone, ipad ...); microprocessor controller, microcontroller, home appliance; build embedded solutions to automate operations. ',
       descriptionAttt:
