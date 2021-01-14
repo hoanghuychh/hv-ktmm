@@ -17,7 +17,7 @@ function Home() {
       <Button style={styles.button} status="warning" onPress={() => push('IntroACT', {})}>
         {t('mayBe')}
       </Button>
-      <Button style={styles.button} status="info" onPress={() => push('thanks', {})}>
+      <Button style={styles.button} status="info" onPress={() => push('Thanks2', {})}>
         {t('noChoose')}
       </Button>
     </View>
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.aliceBlue,
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 24,
     textAlign: 'center',
     margin: 10,
   },

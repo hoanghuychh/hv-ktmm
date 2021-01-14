@@ -6,15 +6,12 @@ import Colors from 'src/constants/colors';
 
 function Thanks() {
   const {t} = useTranslation();
-  const random = Math.floor(Math.random() * 3) + 1;
   return (
     <View style={styles.container}>
       <ConfettiCannon count={200} origin={{x: 0, y: -10}} />
-      <Text style={styles.welcome}>{t('congratulation')}</Text>
+      <Text style={styles.welcome}>{t('thanks')}</Text>
       <Text style={styles.welcome}>{t('takeGift')}</Text>
-      {random === 1 && <Image style={styles.gift2} source={require('../../assets/but.png')} />}
-      {random === 2 && <Image style={styles.gift} source={require('../../assets/pocket.png')} />}
-      {random === 3 && <Image style={styles.gift} source={require('../../assets/tui.png')} />}
+      <Image style={styles.gift2} source={require('../../assets/but.png')} />
     </View>
   );
 }
@@ -32,12 +29,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
-  },
-  gift: {
-    width: 250,
-    height: 250,
-    margin: 10,
-    zIndex: 1,
   },
   gift2: {
     width: 300,

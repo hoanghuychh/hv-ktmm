@@ -7226,6 +7226,11 @@ react-native-bootsplash@^2.2.7:
     jimp "0.14.0"
     prompts "2.3.2"
 
+react-native-confetti-cannon@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/react-native-confetti-cannon/-/react-native-confetti-cannon-1.5.1.tgz#c4f15b8ccb2823fb4785d6896743865be6df58a4"
+  integrity sha512-4yjnIqMsPFiiicVkICGVZqC+ZZiXmryQ4wxHSRbRtaYv4QuK/IWccXXA/wJq72kiefuh41cakG1HVEu8AgflQQ==
+
 react-native-easy-icon@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/react-native-easy-icon/-/react-native-easy-icon-1.0.6.tgz#9beb9982f44e6c242aaa9cb200598217439f2d42"

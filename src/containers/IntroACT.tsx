@@ -3,6 +3,7 @@ import {useTranslation} from 'react-i18next';
 import {StyleSheet, Text, View} from 'react-native';
 import {Button} from '@ui-kitten/components';
 import Colors from 'src/constants/colors';
+import {push} from 'src/lib/NavigationService';
 
 function Inevitable() {
   const {t} = useTranslation();
@@ -10,7 +11,7 @@ function Inevitable() {
   return (
     <View style={styles.container}>
       <Text style={styles.welcome}>{t('descriptionACT')}</Text>
-      <Button style={styles.button} status="primary">
+      <Button style={styles.button} status="primary" onPress={() => push('Inevitable', {})}>
         {t('continue')}
       </Button>
     </View>

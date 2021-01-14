@@ -8,6 +8,9 @@ import ATTT from './ATTT';
 import DTVT from './DTVT';
 import Thanks from './Thanks';
 import IntroACT from './IntroACT';
+import Share from './Share';
+import ChooseGift from './ChooseGift';
+import ThanksIntroACT from './ThanksIntroACT';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +24,9 @@ const StackNavigator = () => {
       <Stack.Screen name="DTVT" component={DTVT} />
       <Stack.Screen name="Thanks" component={Thanks} />
       <Stack.Screen name="IntroACT" component={IntroACT} />
+      <Stack.Screen name="Share" component={Share} />
+      <Stack.Screen name="ChooseGift" component={ChooseGift} />
+      <Stack.Screen name="Thanks2" component={ThanksIntroACT} />
     </Stack.Navigator>
   );
 };

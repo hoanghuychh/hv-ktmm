@@ -10,8 +10,9 @@ function CNTT() {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>{t('cntt')}</Text>
       <Text style={styles.welcome}>{t('descriptionCntt')}</Text>
-      <Button style={styles.button} status="primary" onPress={() => push('Thanks', {})}>
+      <Button style={styles.button} status="primary" onPress={() => push('Share', {})}>
         {t('continue')}
       </Button>
     </View>
@@ -34,6 +35,11 @@ const styles = StyleSheet.create({
   },
   welcome: {
     fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  title: {
+    fontSize: 25,
     textAlign: 'center',
     margin: 10,
   },

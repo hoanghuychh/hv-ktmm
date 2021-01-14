@@ -9,8 +9,9 @@ function ATTT() {
   const {t} = useTranslation();
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>{t('attt')}</Text>
       <Text style={styles.welcome}>{t('descriptionAttt')}</Text>
-      <Button style={styles.button} status="primary" onPress={() => push('Thanks', {})}>
+      <Button style={styles.button} status="primary" onPress={() => push('Share', {})}>
         {t('continue')}
       </Button>
     </View>
@@ -33,6 +34,11 @@ const styles = StyleSheet.create({
   },
   welcome: {
     fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  title: {
+    fontSize: 25,
     textAlign: 'center',
     margin: 10,
   },
