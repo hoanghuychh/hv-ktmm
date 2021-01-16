@@ -11,6 +11,9 @@ import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import com.BV.LinearGradient.LinearGradientPackage; // <--- This!
+//import com.zoontek.rnbootsplash.RNBootSplashPackage; // <- add the RNBootSplashPackage import
+
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -27,6 +30,9 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
+            packages.add(new LinearGradientPackage());
+//            packages.add(new RNBootSplashPackage());
+
           return packages;
         }
 

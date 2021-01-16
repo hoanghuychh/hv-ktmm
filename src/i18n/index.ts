@@ -38,9 +38,9 @@ const resources = {
   vn: {
     translation: {
       welcome: 'Bạn sẽ đăng ký học tại Học viện Kỹ Thuật Mật Mã ?',
-      inevitable: 'Tất nhiên !',
-      mayBe: 'Đang phân vân',
-      noChoose: 'Không, tôi đã có kế hoạch',
+      inevitable: 'TẤT NHIÊN, KMA LÀ LỰA CHỌN CỦA MÌNH',
+      mayBe: 'MÌNH ĐANG PHÂN VÂN',
+      noChoose: 'KHÔNG, MÌNH ĐÃ CÓ KẾ HOẠCH RỒI',
       settings: 'Cài đặt',
       home: 'Trang chủ',
       language: 'Ngôn ngữ',
