@@ -28,8 +28,8 @@ const resources = {
         'Designing, developing, programming and operating automatic control and embedded systems for applications in the fields of electricity - electronics - microchips, chip - automation - industrial electricity.',
       descriptionACT:
         'The society is in the 4.0 period, with the development of information technology. There is no small importance in the industry of cryptography. Currently in Vet Nam there are many universities training cryptographic engineering, including the Institute of Cryptographic Engineering. But many people still do not know what the academy of cryptography does,find out. ',
-      share: 'Share to receive gifts from the academy',
-      postContent: 'Institute of Cryptographic Engineering admission',
+      share: 'SHARE TO RECEIVE GIFTS',
+      postContent: 'INSTITUTE OF CRYPTOGRAPHIC ENGINEERING ADMISSION',
       buttonShare: 'Share',
       chooseGift: 'Choose your gift',
       congratulation: 'Congratulation !',
@@ -59,7 +59,7 @@ const resources = {
         'Thiết kế, phát triển, lập trình, vận hành các hệ thống nhúng và điều khiển tự động ứng dụng trong các lĩnh vực điện - điện tử - vi mạch, chip - tự động hoá -điện công nghiệp.',
       descriptionACT:
         'Xã hội đang trong thời kỳ 4.0, công nghệ thông tin phát triển. Trong có có ngành mật mã có sự quan trọng không hề nhỏ. Hiện nay ở Vệt Nam đã và đang có nhiều trường đại học đào tạo ngành kỹ thuật mật mã, trong đó có Học Viện Kỹ thuật mật mã. Nhưng nhiều người vẫn không biết học viện kỹ thuật mật mã ra làm gì hãy tìm hiểu nào.',
-      share: 'Chia sẻ để nhận phần quà từ học viện',
+      share: 'CHIA SẺ ĐỂ NHẬN PHẦN QUÀ',
       postContent: 'Học viện Kỹ thuật mật mã tuyển sinh',
       buttonShare: 'Chia sẻ',
       chooseGift: 'Chọn món quà của bạn',

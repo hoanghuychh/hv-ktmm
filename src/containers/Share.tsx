@@ -1,15 +1,15 @@
 import React, {memo} from 'react';
 import {useTranslation} from 'react-i18next';
-import {Linking, StyleSheet, Text, View} from 'react-native';
-import {Button} from '@ui-kitten/components';
-import Colors from 'src/constants/colors';
+import {Image, Linking, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import {push} from 'src/lib/NavigationService';
+import stylesSheet from './styles';
 
 function Inevitable() {
   const {t} = useTranslation();
   const postOnFacebook = () => {
     const facebookParameters = [];
-    const facebookShareURL = 'http://actvn.edu.vn/';
+    const facebookShareURL = 'http://tuyensinh.actvn.edu.vn/';
     const postContent = t('postContent');
     if (facebookShareURL) facebookParameters.push('u=' + encodeURI(facebookShareURL));
     if (postContent) facebookParameters.push('quote=' + encodeURI(postContent));
@@ -24,32 +24,31 @@ function Inevitable() {
       });
   };
   return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>{t('share')}</Text>
-      <Button style={styles.button} status="primary" onPress={postOnFacebook}>
-        {t('buttonShare')}
-      </Button>
-    </View>
+    <SafeAreaView style={stylesSheet.safeArea}>
+      <ScrollView style={stylesSheet.scrollView}>
+        <View style={stylesSheet.container}>
+          <View style={stylesSheet.logo}>
+            <Image style={stylesSheet.imageLogo} source={require('../../assets/logo.png')} />
+          </View>
+          <LinearGradient
+            start={{x: 0, y: 0}}
+            end={{x: 1, y: 0}}
+            colors={['#ec4427', '#f37e33']}
+            style={[stylesSheet.linearGradient, {marginVertical: 100}]}>
+            <TouchableOpacity style={stylesSheet.button} onPress={postOnFacebook}>
+              <Text style={stylesSheet.buttonText}>{t('share')}</Text>
+            </TouchableOpacity>
+          </LinearGradient>
+          <View style={stylesSheet.wrapKmakey}>
+            <Image
+              style={{width: '100%', height: '100%'}}
+              source={require('../../assets/kmakey.png')}
+            />
+          </View>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 export default memo(Inevitable);
-
-const styles = StyleSheet.create({
-  button: {
-    margin: 2,
-    minWidth: 222,
-    marginTop: 10,
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: Colors.aliceBlue,
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-});

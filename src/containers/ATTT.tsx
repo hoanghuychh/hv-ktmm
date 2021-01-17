@@ -1,40 +1,32 @@
 import React, {memo} from 'react';
 import {useTranslation} from 'react-i18next';
-import {Image, SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
-import {Button} from '@ui-kitten/components';
-import Colors from 'src/constants/colors';
+import {Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {push} from 'src/lib/NavigationService';
+import stylesSheet from './styles';
+import LinearGradient from 'react-native-linear-gradient';
 
 function ATTT() {
   const {t} = useTranslation();
   return (
-    <View style={styles.container}>
-      <Image style={styles.image1} source={require('../../assets/CNTTIMG.png')} />
-      {/* <Text style={styles.title}>{t('attt')}</Text>
-      <Text style={styles.welcome}>{t('descriptionAttt')}</Text> */}
-      <Button style={styles.button} status="primary" onPress={() => push('Share', {})}>
-        {t('continue')}
-      </Button>
-    </View>
+    <SafeAreaView style={stylesSheet.safeArea}>
+      <ScrollView style={stylesSheet.scrollView}>
+        <View style={stylesSheet.container}>
+          <View style={stylesSheet.wrapImage}>
+            <Image style={stylesSheet.image} source={require('../../assets/game-ATTT.png')} />
+          </View>
+          <LinearGradient
+            start={{x: 0, y: 0}}
+            end={{x: 1, y: 0}}
+            colors={['#ec4427', '#f37e33']}
+            style={stylesSheet.linearGradientBottom}>
+            <TouchableOpacity style={stylesSheet.button} onPress={() => push('Share', {})}>
+              <Text style={stylesSheet.buttonText}>{t('continue')}</Text>
+            </TouchableOpacity>
+          </LinearGradient>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 export default memo(ATTT);
-
-const styles = StyleSheet.create({
-  button: {
-    margin: 2,
-    minWidth: 222,
-    marginTop: 10,
-  },
-  image1: {
-    width: '100%',
-    height: '100%',
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: Colors.aliceBlue,
-  },
-});

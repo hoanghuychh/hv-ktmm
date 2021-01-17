@@ -1,33 +1,52 @@
 import React, {memo} from 'react';
 import {useTranslation} from 'react-i18next';
-import {Image, StyleSheet, Text, View} from 'react-native';
-import ConfettiCannon from 'react-native-confetti-cannon';
-import Colors from 'src/constants/colors';
+import {Image, SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
+// import ConfettiCannon from 'react-native-confetti-cannon';
+import stylesSheet from './styles';
 
 function Thanks() {
   const {t} = useTranslation();
-  const random = Math.floor(Math.random() * 3) + 1;
+  const option = ['but', 'but', 'pocket', 'but', 'but', 'pocket', 'but', 'tui', 'but', 'pocket'];
+  const random = option[Math.floor(Math.random() * option.length)];
+  const randomPocket = Math.floor(Math.random() * 2) + 1;
   return (
-    <View style={styles.container}>
-      <ConfettiCannon count={200} origin={{x: 0, y: -10}} />
-      <Text style={styles.welcome}>{t('congratulation')}</Text>
-      <Text style={styles.welcome}>{t('takeGift')}</Text>
-      {random === 1 && <Image style={styles.gift2} source={require('../../assets/but.png')} />}
-      {random === 2 && <Image style={styles.gift} source={require('../../assets/pocket.png')} />}
-      {random === 3 && <Image style={styles.gift} source={require('../../assets/tui.png')} />}
-    </View>
+    <SafeAreaView style={stylesSheet.safeArea}>
+      <ScrollView style={stylesSheet.scrollView}>
+        <View style={stylesSheet.container}>
+          <View style={stylesSheet.logo}>
+            <Image style={stylesSheet.imageLogo} source={require('../../assets/logo.png')} />
+          </View>
+          <Text style={styles.welcome}>{t('congratulation')}</Text>
+          {random === 'but' && (
+            <Image style={styles.gift2} source={require('../../assets/pen.png')} />
+          )}
+          {random === 'pocket' && randomPocket === 1 && (
+            <Image style={styles.gift} source={require('../../assets/pocket1.png')} />
+          )}
+          {random === 'pocket' && randomPocket === 2 && (
+            <Image style={styles.gift} source={require('../../assets/pocket2.png')} />
+          )}
+          {random === 'tui' && (
+            <Image style={styles.gift} source={require('../../assets/tui.png')} />
+          )}
+          <View style={stylesSheet.wrapKmakey}>
+            <Image
+              style={{width: '100%', height: '100%'}}
+              source={require('../../assets/kmakey.png')}
+            />
+          </View>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+    // <View style={styles.container}>
+    //   <ConfettiCannon count={200} origin={{x: 0, y: -10}} />
+    // </View>
   );
 }
 
 export default memo(Thanks);
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: Colors.aliceBlue,
-  },
   welcome: {
     fontSize: 20,
     textAlign: 'center',

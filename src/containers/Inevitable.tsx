@@ -1,46 +1,126 @@
 import React, {memo} from 'react';
 import {useTranslation} from 'react-i18next';
-import {StyleSheet, Text, View} from 'react-native';
-import {Button} from '@ui-kitten/components';
-import Colors from 'src/constants/colors';
+import {
+  Image,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {push} from 'src/lib/NavigationService';
+import LinearGradient from 'react-native-linear-gradient';
 
 function Inevitable() {
   const {t} = useTranslation();
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>{t('industry')}</Text>
-      <Button style={styles.button} status="primary" onPress={() => push('CNTT', {})}>
-        {t('cntt')}
-      </Button>
-      <Button style={styles.button} status="primary" onPress={() => push('ATTT', {})}>
-        {t('attt')}
-      </Button>
-      <Button style={styles.button} status="primary" onPress={() => push('DTVT', {})}>
-        {t('dtvt')}
-      </Button>
-    </View>
+    <SafeAreaView style={styles.safeArea}>
+      <ScrollView style={styles.scrollView}>
+        <View style={styles.container}>
+          <View
+            style={{
+              width: '100%',
+              height: 150,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginTop: 24,
+            }}>
+            <Image
+              style={{
+                width: '40%',
+                resizeMode: 'contain',
+              }}
+              source={require('../../assets/logo.png')}
+            />
+          </View>
+          <LinearGradient
+            start={{x: 0, y: 0}}
+            end={{x: 1, y: 0}}
+            colors={['#ec4427', '#f37e33']}
+            style={styles.linearGradient}>
+            <TouchableOpacity style={styles.button} onPress={() => push('CNTT', {})}>
+              <Text style={styles.buttonText}>{t('cntt')}</Text>
+            </TouchableOpacity>
+          </LinearGradient>
+          <LinearGradient
+            start={{x: 0, y: 0}}
+            end={{x: 1, y: 0}}
+            colors={['#ec4427', '#f37e33']}
+            style={styles.linearGradient}>
+            <TouchableOpacity style={styles.button} onPress={() => push('ATTT', {})}>
+              <Text style={styles.buttonText}>{t('attt')}</Text>
+            </TouchableOpacity>
+          </LinearGradient>
+          <LinearGradient
+            start={{x: 0, y: 0}}
+            end={{x: 1, y: 0}}
+            colors={['#ec4427', '#f37e33']}
+            style={styles.linearGradient}>
+            <TouchableOpacity style={styles.button} onPress={() => push('DTVT', {})}>
+              <Text style={styles.buttonText}>{t('dtvt')}</Text>
+            </TouchableOpacity>
+          </LinearGradient>
+          <View
+            style={{
+              width: '100%',
+              height: 200,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Image
+              style={{width: '100%', height: '100%'}}
+              source={require('../../assets/kmakey.png')}
+            />
+          </View>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 export default memo(Inevitable);
 
 const styles = StyleSheet.create({
+  scrollView: {
+    backgroundColor: '#ffffff',
+    width: '100%',
+  },
   button: {
-    margin: 2,
-    minWidth: 222,
-    marginTop: 10,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 24,
+    lineHeight: 32,
+    justifyContent: 'center',
+    alignItems: 'center',
+    display: 'flex',
+  },
+  safeArea: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: Colors.aliceBlue,
   },
-  welcome: {
-    fontSize: 20,
+  linearGradient: {
+    borderRadius: 100,
+    width: '70%',
+    marginTop: 32,
+  },
+  buttonText: {
+    fontSize: 22,
+    fontWeight: 'bold',
     textAlign: 'center',
     margin: 10,
+    color: '#ffffff',
+    backgroundColor: 'transparent',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
