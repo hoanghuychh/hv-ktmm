@@ -2,10 +2,17 @@ import React, {memo} from 'react';
 import {useTranslation} from 'react-i18next';
 import {Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import {useDispatch, useSelector} from 'react-redux';
 import stylesSheet from './styles';
 
 function Settings() {
   const {t, i18n} = useTranslation();
+  const user = useSelector((state) => state.users.user);
+  const dispatch = useDispatch();
+  const fetchUser = () => {
+    const userId = '1';
+    dispatch(fetchUserAsync.request(userId));
+  };
   return (
     <SafeAreaView style={stylesSheet.safeArea}>
       <ScrollView style={stylesSheet.scrollView}>
@@ -19,7 +26,7 @@ function Settings() {
             colors={['#ec4427', '#f37e33']}
             style={[stylesSheet.linearGradient, {marginVertical: 20}]}>
             <TouchableOpacity style={stylesSheet.button} onPress={() => i18n.changeLanguage('en')}>
-              <Text style={stylesSheet.buttonText}>{t('ENGLISH')}</Text>
+              <Text style={stylesSheet.buttonText}>{t('HÀ NỘI')}</Text>
             </TouchableOpacity>
           </LinearGradient>
           <LinearGradient
@@ -28,7 +35,7 @@ function Settings() {
             colors={['#ec4427', '#f37e33']}
             style={[stylesSheet.linearGradient, {marginVertical: 20}]}>
             <TouchableOpacity style={stylesSheet.button} onPress={() => i18n.changeLanguage('vn')}>
-              <Text style={stylesSheet.buttonText}>{t('TIẾNG VIỆT')}</Text>
+              <Text style={stylesSheet.buttonText}>{t('HỒ CHÍ MINH')}</Text>
             </TouchableOpacity>
           </LinearGradient>
           <View style={stylesSheet.wrapKmakey}>
