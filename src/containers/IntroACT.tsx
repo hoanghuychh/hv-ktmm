@@ -1,40 +1,33 @@
 import React, {memo} from 'react';
 import {useTranslation} from 'react-i18next';
-import {StyleSheet, Text, View} from 'react-native';
-import {Button} from '@ui-kitten/components';
-import Colors from 'src/constants/colors';
+import {Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {push} from 'src/lib/NavigationService';
+import LinearGradient from 'react-native-linear-gradient';
+import stylesSheet from './styles';
 
 function Inevitable() {
   const {t} = useTranslation();
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>{t('descriptionACT')}</Text>
-      <Button style={styles.button} status="primary" onPress={() => push('Inevitable', {})}>
-        {t('continue')}
-      </Button>
-    </View>
+    <SafeAreaView style={stylesSheet.safeArea}>
+      <ScrollView style={stylesSheet.scrollView}>
+        <View style={stylesSheet.container}>
+          <View style={stylesSheet.wrapImage}>
+            <Image style={stylesSheet.image} source={require('../../assets/HVMM-game.png')} />
+          </View>
+          <LinearGradient
+            start={{x: 0, y: 0}}
+            end={{x: 1, y: 0}}
+            colors={['#ec4427', '#f37e33']}
+            style={stylesSheet.linearGradientBottom}>
+            <TouchableOpacity style={stylesSheet.button} onPress={() => push('Inevitable', {})}>
+              <Text style={stylesSheet.buttonText}>{t('continue')}</Text>
+            </TouchableOpacity>
+          </LinearGradient>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 export default memo(Inevitable);
-
-const styles = StyleSheet.create({
-  button: {
-    margin: 2,
-    minWidth: 222,
-    marginTop: 10,
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: Colors.aliceBlue,
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-});

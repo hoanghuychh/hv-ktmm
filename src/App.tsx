@@ -5,7 +5,7 @@ import RNBootSplash from 'react-native-bootsplash';
 import Icon from 'react-native-easy-icon';
 
 import * as eva from '@eva-design/eva';
-import {ApplicationProvider, Layout, Text} from '@ui-kitten/components';
+import {ApplicationProvider} from '@ui-kitten/components';
 
 import StackNavigator from 'src/containers/StackNavigator';
 import Settings from 'src/containers/Settings';
