@@ -5,10 +5,12 @@ import {AppAction} from 'src/actions/actionTypes';
 
 export interface AppReducerState {
   version: string;
+  current: string;
 }
 
 const initialState: AppReducerState = {
   version: '1.0.0',
+  current: 'hanoi',
 };
 
 const appReducer = createReducer<AppReducerState, AppAction>(

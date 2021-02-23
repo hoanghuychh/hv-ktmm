@@ -13,9 +13,24 @@ function Inevitable() {
     const postContent = t('postContent');
     if (facebookShareURL) facebookParameters.push('u=' + encodeURI(facebookShareURL));
     if (postContent) facebookParameters.push('quote=' + encodeURI(postContent));
-    const url = 'https://www.facebook.com/sharer/sharer.php?' + facebookParameters.join('&');
+    const urlWeb = 'https://www.facebook.com/sharer/sharer.php?' + facebookParameters.join('&');
+    // const urlApp = 'fb://sharer/sharer.php?' + facebookParameters.join('&');
+    // Linking.canOpenURL(urlApp)
+    //   .then((supported: any) => {
+    //     if (supported) {
+    //       return Linking.openURL(urlApp);
+    //     } else {
+    //       return Linking.openURL(urlWeb);
+    //     }
+    //   })
+    //   .then(() => {
+    //     push('ChooseGift', {});
+    //   })
+    //   .catch(() => {
+    //     return false;
+    //   });
 
-    Linking.openURL(url)
+    Linking.openURL(urlWeb)
       .then(() => {
         push('ChooseGift', {});
       })

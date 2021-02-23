@@ -11,6 +11,7 @@ import IntroACT from './IntroACT';
 import Share from './Share';
 import ChooseGift from './ChooseGift';
 import ThanksIntroACT from './ThanksIntroACT';
+import HavePlan from './HavePlan';
 
 const Stack = createStackNavigator();
 
@@ -22,11 +23,18 @@ const StackNavigator = () => {
       <Stack.Screen name="CNTT" component={CNTT} />
       <Stack.Screen name="ATTT" component={ATTT} />
       <Stack.Screen name="DTVT" component={DTVT} />
-      <Stack.Screen name="Thanks" component={Thanks} />
+      <Stack.Screen
+        name="Thanks"
+        component={Thanks}
+        options={{
+          gestureEnabled: false,
+        }}
+      />
       <Stack.Screen name="IntroACT" component={IntroACT} />
       <Stack.Screen name="Share" component={Share} />
       <Stack.Screen name="ChooseGift" component={ChooseGift} />
       <Stack.Screen name="Thanks2" component={ThanksIntroACT} />
+      <Stack.Screen name="HavePlan" component={HavePlan} />
     </Stack.Navigator>
   );
 };

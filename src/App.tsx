@@ -20,7 +20,7 @@ const Tab = createBottomTabNavigator();
 
 const App = () => {
   const init = async () => {
-    await sleep(100);
+    await sleep(10);
     // …do multiple async tasks
   };
 
@@ -33,7 +33,7 @@ const App = () => {
   const {t} = useTranslation();
   return (
     <ApplicationProvider {...eva} theme={eva.light}>
-      <Tab.Navigator initialRouteName="home">
+      <Tab.Navigator initialRouteName="settings">
         <Tab.Screen
           name="home"
           component={StackNavigator}

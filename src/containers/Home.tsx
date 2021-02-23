@@ -37,7 +37,7 @@ function Home() {
             end={{x: 1, y: 0}}
             colors={['#ec4427', '#f37e33']}
             style={stylesSheet.linearGradient}>
-            <TouchableOpacity style={stylesSheet.button} onPress={() => push('Thanks2', {})}>
+            <TouchableOpacity style={stylesSheet.button} onPress={() => push('HavePlan', {})}>
               <Text style={stylesSheet.buttonText}>{t('noChoose')}</Text>
             </TouchableOpacity>
           </LinearGradient>

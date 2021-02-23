@@ -1,6 +1,8 @@
 import React, {memo} from 'react';
+import {BackHandler} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {Image, SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {useRoute, useFocusEffect} from '@react-navigation/native';
 // import ConfettiCannon from 'react-native-confetti-cannon';
 import stylesSheet from './styles';
 
@@ -9,6 +11,21 @@ function Thanks() {
   const option = ['but', 'but', 'pocket', 'but', 'but', 'pocket', 'but', 'tui', 'but', 'pocket'];
   const random = option[Math.floor(Math.random() * option.length)];
   const randomPocket = Math.floor(Math.random() * 2) + 1;
+  const route = useRoute();
+
+  useFocusEffect(
+    React.useCallback(() => {
+      const onBackPress = () => {
+        if (route.name === 'Thanks' || route.name === 'Thanks2') {
+          return true;
+        } else {
+          return false;
+        }
+      };
+      BackHandler.addEventListener('hardwareBackPress', onBackPress);
+      return () => BackHandler.removeEventListener('hardwareBackPress', onBackPress);
+    }, [route]),
+  );
   return (
     <SafeAreaView style={stylesSheet.safeArea}>
       <ScrollView style={stylesSheet.scrollView}>

@@ -1,18 +1,26 @@
 import React, {memo} from 'react';
 import {useTranslation} from 'react-i18next';
 import {Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import {useSelector} from 'react-redux';
+
 import {push} from 'src/lib/NavigationService';
 import stylesSheet from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 
 function ATTT() {
   const {t} = useTranslation();
+  const current = useSelector((state: any) => state?.app?.current);
   return (
     <SafeAreaView style={stylesSheet.safeArea}>
       <ScrollView style={stylesSheet.scrollView}>
         <View style={stylesSheet.container}>
           <View style={stylesSheet.wrapImage}>
-            <Image style={stylesSheet.image} source={require('../../assets/game-ATTT.png')} />
+            {current === 'hanoi' && (
+              <Image style={stylesSheet.image} source={require('../../assets/game-ATTT.png')} />
+            )}
+            {current === 'hcm' && (
+              <Image style={stylesSheet.image} source={require('../../assets/game-ATTT-HCM.png')} />
+            )}
           </View>
           <LinearGradient
             start={{x: 0, y: 0}}

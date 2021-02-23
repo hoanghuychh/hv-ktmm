@@ -11,10 +11,11 @@ import {
 } from 'react-native';
 import {push} from 'src/lib/NavigationService';
 import LinearGradient from 'react-native-linear-gradient';
+import {useSelector} from 'react-redux';
 
 function Inevitable() {
   const {t} = useTranslation();
-
+  const current = useSelector((state: any) => state?.app?.current);
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView style={styles.scrollView}>
@@ -54,15 +55,17 @@ function Inevitable() {
               <Text style={styles.buttonText}>{t('attt')}</Text>
             </TouchableOpacity>
           </LinearGradient>
-          <LinearGradient
-            start={{x: 0, y: 0}}
-            end={{x: 1, y: 0}}
-            colors={['#ec4427', '#f37e33']}
-            style={styles.linearGradient}>
-            <TouchableOpacity style={styles.button} onPress={() => push('DTVT', {})}>
-              <Text style={styles.buttonText}>{t('dtvt')}</Text>
-            </TouchableOpacity>
-          </LinearGradient>
+          {current === 'hanoi' && (
+            <LinearGradient
+              start={{x: 0, y: 0}}
+              end={{x: 1, y: 0}}
+              colors={['#ec4427', '#f37e33']}
+              style={styles.linearGradient}>
+              <TouchableOpacity style={styles.button} onPress={() => push('DTVT', {})}>
+                <Text style={styles.buttonText}>{t('dtvt')}</Text>
+              </TouchableOpacity>
+            </LinearGradient>
+          )}
           <View
             style={{
               width: '100%',

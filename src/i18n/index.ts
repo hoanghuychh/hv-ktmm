@@ -40,7 +40,7 @@ const resources = {
       welcome: 'Bạn sẽ đăng ký học tại Học viện Kỹ Thuật Mật Mã ?',
       inevitable: 'TẤT NHIÊN, KMA LÀ LỰA CHỌN CỦA MÌNH',
       mayBe: 'MÌNH ĐANG PHÂN VÂN',
-      noChoose: 'KHÔNG, MÌNH ĐÃ CÓ KẾ HOẠCH RỒI',
+      noChoose: 'MÌNH ĐÃ CÓ KẾ HOẠCH KHÁC',
       cntt: 'CÔNG NGHỆ THÔNG TIN',
       attt: 'AN TOÀN THÔNG TIN',
       continue: 'TIẾP TỤC',

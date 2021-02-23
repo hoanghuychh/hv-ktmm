@@ -4,16 +4,22 @@ import {Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from 'rea
 import {push} from 'src/lib/NavigationService';
 import LinearGradient from 'react-native-linear-gradient';
 import stylesSheet from './styles';
+import {useSelector} from 'react-redux';
 
 function Inevitable() {
   const {t} = useTranslation();
-
+  const current = useSelector((state: any) => state?.app?.current);
   return (
     <SafeAreaView style={stylesSheet.safeArea}>
       <ScrollView style={stylesSheet.scrollView}>
         <View style={stylesSheet.container}>
           <View style={stylesSheet.wrapImage}>
-            <Image style={stylesSheet.image} source={require('../../assets/HVMM-game.png')} />
+            {current === 'hanoi' && (
+              <Image style={stylesSheet.image} source={require('../../assets/HVMM-game.png')} />
+            )}
+            {current === 'hcm' && (
+              <Image style={stylesSheet.image} source={require('../../assets/game-KMA-HCM.png')} />
+            )}
           </View>
           <LinearGradient
             start={{x: 0, y: 0}}
